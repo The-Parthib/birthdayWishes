@@ -7,17 +7,44 @@
 body {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #43048b 0%, #ec0656 100%);
     font-family: 'Arial', sans-serif;
     overflow: hidden;
 }
 
+/* Container for flex layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80vh;
+    overflow: hidden;
+}
+
+/* Video section */
+.photo-left {
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-left video {
+    width: 240px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+    top: 30px;
+    left: 90px;
+    border-radius: 100px;
+}
+
+/* Balloon container */
 .balloon-container {
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 70%;
     overflow: hidden;
 }
 
@@ -25,14 +52,14 @@ body {
     position: absolute;
     bottom: -150px;
     left: 50%;
-    font-size: 2.5rem;
-    color: #fff;
+    font-size: 2rem;
+    color: white;
     padding: 10px 20px;
     border-radius: 50%;
-    /* background: radial-gradient(circle, #ff6b6b, #ff4757); */
     text-align: center;
     animation: floatUp 10s ease-in-out infinite;
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 @keyframes floatUp {
@@ -56,34 +83,23 @@ body {
 }
 
 .balloon:nth-child(odd) {
-    animation-timing-function: ease-in-out;
     animation-duration: 12s;
-    /* background: radial-gradient(circle, #ff9f43, #f368e0); */
 }
 
 .balloon:nth-child(even) {
-    animation-timing-function: linear;
     animation-duration: 8s;
-    /* background: radial-gradient(circle, #54a0ff, #5f27cd); */
 }
 
-footer {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    padding: 30px 20px;
-    color: white;
+/* Footer Styling */
+.footer {
+    background-color: rgb(177, 26, 227);
+    padding: 10px;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.footer-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.footer-content p {
+    color: white;
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footer strong {
+    color: #fcff38;
 }
